@@ -25,7 +25,6 @@ class App{
 		container.appendChild( this.renderer.domElement );
 		
         //Replace Box with Circle, Cone, Cylinder, Dodecahedron, Icosahedron, Octahedron, Plane, Sphere, Tetrahedron, Torus or TorusKnot
-        // const geometry = new THREE.CircleBufferGeometry(1, 32, 0, Math.PI);
         const shape = new THREE.Shape();
         const outerRadius = 0.8;
         const innerRadius = 0.4;
@@ -41,13 +40,13 @@ class App{
             inner = !inner;
         };
 
-        const extrideSettings = {
+        const extrudeSettings = {
             steps: 1,
             depth: 1,
             bevelEnabled: false
         };
 
-        const geometry = new THREE.ExtrudeGeometry( shape, extrideSettings );
+        const geometry = new THREE.ExtrudeGeometry( shape, extrudeSettings );
         
         const material = new THREE.MeshStandardMaterial( { color: 0xFF0000 });
 
