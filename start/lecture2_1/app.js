@@ -6,24 +6,30 @@ class App{
 		const container = document.createElement( 'div' );
 		document.body.appendChild( container );
 
-		const scene = new THREE.Scene();
-		const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000);
+		this.scene = new THREE.Scene();
+		this.camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
-		const renderer = new THREE.WebGLRenderer();
-		renderer.setSize( window.innerWidth, window.innerHeight );
+		this.renderer = new THREE.WebGLRenderer();
+		this.renderer.setSize( window.innerWidth, window.innerHeight );
+
+		container.appendChild( this.renderer.domElement );
 
 		const geometry = new THREE.BoxGeometry( 1, 1, 1 );
 		const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-		const cube = new THREE.Mesh( geometry, material );
+		this.cube = new THREE.Mesh( geometry, material );
 
-		scene.add( cube );
+		this.scene.add( this.cube );
 
 		camera.position.z = 5;
 
-		container.appendChild( renderer.domElement );
+		this.renderer.requestAnimationFrame( this.animate.bind(this) )
     
         window.addEventListener('resize', this.resize.bind(this) );
-	}	
+	}
+
+	animate() {
+		this.renderer.render( this.scene, this.camera );
+	}
     
     resize(){
         

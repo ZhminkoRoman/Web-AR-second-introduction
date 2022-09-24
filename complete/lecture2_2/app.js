@@ -36,7 +36,7 @@ class App{
         this.renderer.setAnimationLoop(this.render.bind(this));
     
         window.addEventListener('resize', this.resize.bind(this) );
-	}	
+	}
     
     resize(){
         this.camera.aspect = window.innerWidth / window.innerHeight;
