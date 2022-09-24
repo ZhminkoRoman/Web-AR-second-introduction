@@ -20,7 +20,7 @@ class App{
 
 		this.scene.add( this.cube );
 
-		camera.position.z = 5;
+		this.camera.position.z = 5;
 
 		this.renderer.setAnimationLoop( this.render.bind(this) )
     
@@ -28,7 +28,7 @@ class App{
 	}
 
 	animate() {
-		
+
 	}
     
     resize(){
