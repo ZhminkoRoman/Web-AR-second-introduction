@@ -22,13 +22,13 @@ class App{
 
 		camera.position.z = 5;
 
-		this.renderer.requestAnimationFrame( this.animate.bind(this) )
+		this.renderer.setAnimationLoop( this.render.bind(this) )
     
         window.addEventListener('resize', this.resize.bind(this) );
 	}
 
 	animate() {
-		this.renderer.render( this.scene, this.camera );
+		
 	}
     
     resize(){
@@ -36,7 +36,7 @@ class App{
     }
     
 	render( ) {   
-        
+		this.renderer.render( this.scene, this.camera );
     }
 }
 
