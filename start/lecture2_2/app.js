@@ -21,7 +21,7 @@ class App {
     this.scene.add(ambient);
 
     const light = new THREE.DirectionalLight();
-    light.position.set(0.2, 1, 1);
+    light.position.set(2, 0.5, 1);
     this.scene.add(light);
 
     this.renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -32,7 +32,7 @@ class App {
     this.renderer.setAnimationLoop(this.render.bind(this));
 
     const geometry = new THREE.BoxBufferGeometry();
-    const material = new THREE.MeshStandardMaterial({ color: 0xffff00 });
+    const material = new THREE.MeshStandardMaterial({ color: 0xff2e00 });
 
     this.mesh = new THREE.Mesh(geometry, material);
 
